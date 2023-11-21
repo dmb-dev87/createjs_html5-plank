@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>plank_html5</title>    
+    <script src="js/libs/easeljs-0.8.2.min.js"></script>
+    <script src="js/libs/tweenjs-0.5.1.min.js"></script>
+    <script src="js/libs/movieclip-0.7.1.min.js"></script>
+    <script src="js/libs/preloadjs-0.4.1.min.js"></script>
+    <script src="js/libs/jquery.min.js"></script>
+    <script src="js/libs/soundjs-0.5.2.min.js"></script>
+    <script src="js/model/Globals.js"></script>
+    <script src="js/view/Correct.js"></script>
+    <script src="js/view/GameOver.js"></script>
+    <script src="js/view/GameWin.js"></script>
+    <script src="js/view/InCorrect.js"></script>
+    <script src="js/view/Intro.js"></script>
+    <script src="js/view/Panel.js"></script>
+    <script src="js/view/Question.js"></script>
+    <script src="js/view/Sea.js"></script>
+    <script src="js/view/Teacher.js"></script>
+    <script src="js/view/Title.js"></script>
+    <script src="plank-html5.js"></script>    
+    <script>
+		var canvas, stage, exportRoot;
+		
+		function init()
+		{
+			canvas = document.getElementById("canvas");
+			exportRoot = new lib.plank_html5();
+		
+			stage = new createjs.Stage(canvas);
+			stage.addChild(exportRoot);
+			stage.update();
+			stage.enableMouseOver();
+		
+			createjs.Ticker.setFPS(lib.properties.fps);
+			createjs.Ticker.addEventListener("tick", stage);
+		}
+    </script>
+    </head>
+    <body onload="init();" style="background-color:#edeacf">
+        <canvas id="canvas" width="710" height="380" style="background-color:#FFFFFF"></canvas>
+    </body>
+</html>
